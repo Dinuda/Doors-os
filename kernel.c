@@ -9,3 +9,5 @@
 #define YELLOW 14
 #define WHITE_COLOR 15 
 
+unsigned short *terminal_buffer;
+unsigned int vga_index;
