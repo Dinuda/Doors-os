@@ -35,3 +35,18 @@ void print_string(char *str, unsigned char color)
     }
 }
 
+
+// sets internal location marker to the next line
+// prints another message
+// returns back to the bootcode
+void main(void) 
+{
+    terminal_buffer = (unsigned short *)VGA_ADDRESS;
+    vga_index = 0;
+
+    clear_screen();
+    print_string("Hello from Doors", YELLOW);
+    vga_index = 80;    /* next line */
+    print_string("Goodbye from Doors, sorry to see you go", RED);
+    return;
+}
